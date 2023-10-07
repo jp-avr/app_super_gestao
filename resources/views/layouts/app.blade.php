@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <a href="{{route('home')}}">Voltar para a página inicial</a>
 </body>
 </html>

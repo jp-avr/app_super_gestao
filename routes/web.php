@@ -16,6 +16,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/sobre-nos', 'SobreNosController@index')->name('sobrenos');
 
 Route::get('/contatos', 'ContatosController@index')->name('contatos');
+
+Route::get('/login', function(){
+    return 'Login';
+})->name('login');
+
+Route::prefix('/app')->group(function(){
+    Route::get('/clientes', function(){
+        return 'Clientes';
+    })->name('app.clientes');;
+    Route::get('/fornecedores', function(){
+        return 'Fornecedores';
+    })->name('app.fornecedores');;
+    Route::get('/produtos', function(){
+        return 'Produtos';
+    })->name('app.produtos');;    
+});
