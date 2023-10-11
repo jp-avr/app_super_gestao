@@ -20,9 +20,6 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'motivo_contato',
-        'mensagem',
-        'celular',
         'email',
         'password',
     ];
@@ -50,4 +47,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function idade() {
+        $idade = date('Y') - date('Y',strtotime($this->data_nascimento));
+        return $idade;
+    }
 }
