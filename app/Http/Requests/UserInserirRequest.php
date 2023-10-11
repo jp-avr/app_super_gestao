@@ -28,6 +28,7 @@ class UserInserirRequest extends FormRequest
             'email' => ['nullable', 'email', 'max:255' ],
             'celular' => ['required', 'string', 'max:255'],
             'motivo_contato' => ['required', 'integer'],
+            'mensagem' => ['required', 'string'],
         ];
     }
 
@@ -45,6 +46,9 @@ class UserInserirRequest extends FormRequest
 
             'motivo_contato.required' => 'O campo Motivo de Contato é obrigatório',
             'motivo_contato.integer' => 'O campo Motivo de Contato é inválido',
+
+            'mensagem.required' => 'O campo Mensagem é obrigatório',
+            'mensagem.string' => 'O campo Mensagem é inválido',
         ];
     }
 }
