@@ -27,13 +27,11 @@ Route::get('/login', function(){
 })->name('login');
 
 Route::prefix('/app')->group(function(){
-    Route::get('/clientes', function(){
-        return 'Clientes';
-    })->name('app.clientes');;
-    Route::get('/fornecedores', function(){
-        return 'Fornecedores';
-    })->name('app.fornecedores');;
-    Route::get('/produtos', function(){
-        return 'Produtos';
-    })->name('app.produtos');;    
+    Route::get('/clientes', function(){return 'Clientes';})->name('app.clientes');
+    Route::get('/fornecedores', 'FornecedoresController@index')->name('app.fornecedores');
+    Route::get('/produtos', function(){return 'Produtos';})->name('app.produtos');    
+});
+
+Route::fallback(function(){
+    echo "A página acessada não existe, <a href={{ route('home')}}> clique aqui </a> para voltar a página inicial.";
 });
