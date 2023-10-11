@@ -20,7 +20,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/sobre-nos', 'SobreNosController@index')->name('sobrenos');
 
-Route::get('/contatos', 'ContatosController@index')->name('contatos');
+Route::prefix('/contatos')->group(function(){
+    Route::get('contatos_index', 'ContatosController@index')->name('contatos.index');
+    Route::get('contatos_store', 'ContatosController@store')->name('contatos.store');
+});
+
 
 Route::get('/login', function(){
     return 'Login';
