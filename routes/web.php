@@ -23,6 +23,7 @@ Route::get('/sobre-nos', 'SobreNosController@index')->name('sobrenos');
 Route::prefix('/contatos')->group(function(){
     Route::get('contatos_index', 'ContatosController@index')->name('contatos.index');
     Route::get('contatos_store', 'ContatosController@store')->name('contatos.store');
+    Route::post('contatos_store', 'ContatosController@store')->name('contatos.store');
 });
 
 
