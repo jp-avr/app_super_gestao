@@ -1,8 +1,8 @@
 <form method="post" action=" {{ route('contatos.store') }} ">
     @csrf
-    <input type="text" placeholder="Nome" name="name" class="{{ $classe }}">
+    <input type="text" placeholder="Nome" name="nome" class="{{ $classe }}">
     <br>
-    <input type="text" placeholder="Telefone" name="celular" class="{{ $classe }}">
+    <input type="text" placeholder="Telefone" name="telefone" class="{{ $classe }}">
     <br>
     <input type="text" placeholder="E-mail" name="email" class="{{ $classe }}">
     <br>

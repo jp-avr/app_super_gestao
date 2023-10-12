@@ -17,9 +17,9 @@ class CreateSiteContatosTable extends Migration
             $table->id('site_contato_id');
             $table->string('nome');
             $table->string('email');
-            $table->string('celular');
+            $table->string('telefone');
             $table->integer('motivo_contato');
-            $table->string('mensagem')->nullable();
+            $table->string('mensagem');
             $table->timestamps();
         });
     }

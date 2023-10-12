@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UserInserirRequest;
-use App\Models\User;
-use Illuminate\Http\Request;
+use App\Http\Requests\SiteContatoInserirRequest;
+use App\Models\SiteContato;
 
 class ContatosController extends Controller
 {
@@ -25,17 +24,16 @@ class ContatosController extends Controller
         return view('contatos.index');
     }
 
-    public function store(UserInserirRequest $request)
+    public function store(SiteContatoInserirRequest $request)
     {
         //LIMPANDO DADOS DA REQUEST
 
-        $celular = $this->limpar($request['celular']);
+        $telefone = $this->limpar($request['telefone']);
         
-
-        User::create([
-            'name' => $request->name,
+        SiteContato::create([
+            'nome' => $request->nome,
             'email' => $request->email,
-            'celular' => $celular,
+            'telefone' => $telefone,
             'motivo_contato' => $request->motivo_contato,
             'mensagem' => $request->mensagem,
         ]);
