@@ -15,13 +15,10 @@ class CreateProdutosTable extends Migration
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->id('produto_id');
+            $table->foreignId('unidade_id')->references('unidade_id')->on('unidades');
             $table->string('produto_nome');
             $table->text('produto_descricao')->nullable();
             $table->integer('produto_peso');
-            $table->float('produto_preco_venda', 8, 2)->default(0.01);
-            $table->string('produto_estoque_minimo')->default(1);
-            $table->string('produto_estoque_maximo')->default(1);
-
             $table->timestamps();
         });
     }
