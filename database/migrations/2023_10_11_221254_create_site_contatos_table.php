@@ -15,10 +15,10 @@ class CreateSiteContatosTable extends Migration
     {
         Schema::create('site_contatos', function (Blueprint $table) {
             $table->id('site_contato_id');
+            $table->foreignId('motivo_contato_id')->references('motivo_contato_id')->on('motivo_contatos');
             $table->string('site_contato_nome');
             $table->string('site_contato_email')->unique();
             $table->string('site_contato_telefone');
-            $table->integer('site_contato_motivo_contato');
             $table->string('site_contato_mensagem');
             $table->timestamps();
         });

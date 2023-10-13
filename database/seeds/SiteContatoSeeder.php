@@ -14,7 +14,7 @@ class SiteContatoSeeder extends Seeder
     {
         SiteContato::create([
             'site_contato_nome' => 'João Pedro',
-            'site_contato_motivo_contato' => 1,
+            'motivo_contato_id' => 1,
             'site_contato_mensagem' => 'Olá. Como vai?',
             'site_contato_telefone' => '(98) 99111-9229',
             'site_contato_email' => 'dev@dev.com'
