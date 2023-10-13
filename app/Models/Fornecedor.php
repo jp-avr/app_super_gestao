@@ -16,6 +16,7 @@ class Fornecedor extends Model
         'fornecedor_nome',
         'fornecedor_uf',
         'fornecedor_email',
+        'fornecedor_site',
     ];
 
     protected $primaryKey = 'fornecedor_id';

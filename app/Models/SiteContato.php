@@ -13,12 +13,13 @@ class SiteContato extends Model
      * @var array
      */
     protected $fillable = [
-        'nome',
-        'motivo_contato',
-        'mensagem',
-        'telefone',
-        'email',
+        'site_contato_nome',
+        'site_contato_motivo_contato',
+        'site_contato_mensagem',
+        'site_contato_telefone',
+        'site_contato_email',
     ];
 
     protected $primaryKey = 'site_contato_id';
+
 }
