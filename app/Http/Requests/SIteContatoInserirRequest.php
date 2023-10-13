@@ -24,31 +24,31 @@ class SiteContatoInserirRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => ['required', 'string', 'max:255'],
-            'email' => ['nullable', 'email', 'max:255' ],
-            'telefone' => ['required', 'string', 'max:255'],
-            'motivo_contato' => ['required', 'integer'],
-            'mensagem' => ['required', 'string'],
+            'site_contato_nome' => ['required', 'string', 'max:255'],
+            'site_contato_email' => ['required', 'email', 'max:255' ],
+            'site_contato_telefone' => ['required', 'string', 'max:255'],
+            'site_contato_motivo_contato' => ['required', 'integer'],
+            'site_contato_mensagem' => ['required', 'string'],
         ];
     }
 
     public function messages()
     {
         return [
-            'nome.string' => 'O campo Nome é inválido',
-            'nome.required' => 'O campo Nome é obrigatório',
+            'site_contato_nome.string' => 'O campo Nome é inválido',
+            'site_contato_nome.required' => 'O campo Nome é obrigatório',
 
-            'email.email' => 'O campo E-mail é inválido',
-            'email.required' => 'O campo E-mail é obrigatório',
+            'site_contato_email.email' => 'O campo E-mail é inválido',
+            'site_contato_email.required' => 'O campo E-mail é obrigatório',
 
-            'telefone.string' => 'O campo Telefone é inválido',
-            'telefone.required' => 'O campo Telefone é obrigatório',
+            'site_contato_telefone.string' => 'O campo Telefone é inválido',
+            'site_contato_telefone.required' => 'O campo Telefone é obrigatório',
 
-            'motivo_contato.required' => 'O campo Motivo de Contato é obrigatório',
-            'motivo_contato.integer' => 'O campo Motivo de Contato é inválido',
+            'site_contato_motivo_contato.required' => 'O campo Motivo de Contato é obrigatório',
+            'site_contato_motivo_contato.integer' => 'O campo Motivo de Contato é inválido',
 
-            'mensagem.required' => 'O campo Mensagem é obrigatório',
-            'mensagem.string' => 'O campo Mensagem é inválido',
+            'site_contato_mensagem.required' => 'O campo Mensagem é obrigatório',
+            'site_contato_mensagem.string' => 'O campo Mensagem é inválido',
         ];
     }
 }

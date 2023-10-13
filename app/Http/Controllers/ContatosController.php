@@ -28,14 +28,14 @@ class ContatosController extends Controller
     {
         //LIMPANDO DADOS DA REQUEST
 
-        $telefone = $this->limpar($request['telefone']);
+        $telefone = $this->limpar($request['site_contato_telefone']);
         
         SiteContato::create([
-            'nome' => $request->nome,
-            'email' => $request->email,
-            'telefone' => $telefone,
-            'motivo_contato' => $request->motivo_contato,
-            'mensagem' => $request->mensagem,
+            'site_contato_nome' => $request->site_contato_nome,
+            'site_contato_email' => $request->site_contato_email,
+            'site_contato_telefone' => $telefone,
+            'site_contato_motivo_contato' => $request->site_contato_motivo_contato,
+            'site_contato_mensagem' => $request->site_contato_mensagem,
         ]);
         return redirect()->route('contatos.index')->with('sucess','Sua mensagem foi enviada com sucesso!');
     }
