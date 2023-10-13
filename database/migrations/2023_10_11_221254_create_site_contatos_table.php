@@ -17,7 +17,7 @@ class CreateSiteContatosTable extends Migration
             $table->id('site_contato_id');
             $table->foreignId('motivo_contato_id')->references('motivo_contato_id')->on('motivo_contatos');
             $table->string('site_contato_nome');
-            $table->string('site_contato_email')->unique();
+            $table->string('site_contato_email');
             $table->string('site_contato_telefone');
             $table->string('site_contato_mensagem');
             $table->timestamps();

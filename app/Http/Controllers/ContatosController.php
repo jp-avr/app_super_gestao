@@ -42,6 +42,6 @@ class ContatosController extends Controller
             'site_contato_mensagem' => $request->site_contato_mensagem,
         ]);
         
-        return redirect()->route('contatos.index')->with('sucess','Sua mensagem foi enviada com sucesso!');
+        return redirect()->route('contatos.index')->with('sucesso','Sua mensagem foi enviada com sucesso!');
     }
 }

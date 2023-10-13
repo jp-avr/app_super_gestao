@@ -8,8 +8,12 @@
 
         <div class="informacao-pagina">
             <div class="contato-principal">
-                @component('components.formcontato.formcontato',['classe' => 'borda-preta'])
-                @endcomponent
+                @if(session('sucesso'))
+                <div class="alert alert-success">
+                    <p>{{session('sucesso')}}</p>
+                </div>
+                @endif
+                @include('components.formcontato.formcontato',['classe' => 'borda-preta'])
             </div>
         </div>  
     </div>

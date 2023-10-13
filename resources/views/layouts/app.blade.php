@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Super Gestão</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link href="{{ asset('css/app2.css') }}" rel="stylesheet">
 </head>
     <body>
         @include('components.navbar.navbar')

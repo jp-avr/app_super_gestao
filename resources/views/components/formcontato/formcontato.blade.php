@@ -10,7 +10,7 @@
     </div>
 
     <div>
-        <input type="text" placeholder="Telefone *" name="site_contato_telefone" value="{{ old('site_contato_telefone')}}" class="{{ $classe }}">
+        <input type="text" placeholder="Telefone *" name="site_contato_telefone" value="{{ old('site_contato_telefone')}}" class="{{ $classe }} form-control @error('site_contato_telefone') is-invalid @enderror">
         @error('site_contato_telefone')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -19,7 +19,7 @@
     </div>
     
     <div>
-        <input type="text" placeholder="E-mail *" name="site_contato_email" value="{{ old('site_contato_email')}}" class="{{ $classe }}">
+        <input type="text" placeholder="E-mail *" name="site_contato_email" value="{{ old('site_contato_email')}}" class="{{ $classe }} form-control @error('site_contato_email') is-invalid @enderror">
         @error('site_contato_email')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -27,7 +27,7 @@
         @enderror
     </div>
 
-    <div>
+    <div class="teste">
         <select class="form-control @error('motivo_contato_id') is-invalid @enderror" name="motivo_contato_id" class="{{ $classe }}">            
             <option value="" selected disabled>Qual o motivo do contato? *</option>
             @foreach ($motivos as $motivo)
@@ -35,9 +35,6 @@
                 {{ $motivo->motivo_contato_descricao }}
             </option>
             @endforeach
-            {{-- <option value="1" {{ old('site_contato_motivo_contato') == 1 ? 'selected' : '' }}>Dúvida</option>
-            <option value="2" {{ old('site_contato_motivo_contato') == 2 ? 'selected' : '' }}>Elogio</option>
-            <option value="3" {{ old('site_contato_motivo_contato') == 3 ? 'selected' : '' }}>Reclamação</option> --}}
         </select>
             @error('motivo_contato_id')
             <span class="invalid-feedback" role="alert">
@@ -47,7 +44,7 @@
     </div>
 
     <div>
-        <input type="text" name="site_contato_mensagem" placeholder="Preencha aqui a sua mensagem *" class="{{ $classe }}" value="{{ old('site_contato_mensagem')}}">
+        <input type="text" name="site_contato_mensagem" placeholder="Preencha aqui a sua mensagem *" class="{{ $classe }} form-control @error('site_contato_email') is-invalid @enderror" value="{{ old('site_contato_mensagem')}}">
         @error('site_contato_mensagem')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>

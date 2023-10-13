@@ -28,6 +28,16 @@ select, textarea, button {
     color: #333;
 }
 
+.form-control{
+    width: 100%;
+    padding: 10px 15px;
+    margin: 10px 0px 10px 0px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: #ffffff;
+    color: #333;
+}
+
 input {
     width: 100%;
     padding: 10px 15px;
@@ -35,10 +45,19 @@ input {
     box-sizing: border-box;
     border-radius: 3px;
     background-color: transparent;
-} 
+}
+
+.teste{
+    width: 100%;
+    padding: 0px 0px;
+    margin: 0px 0px 0px 0px;
+    box-sizing: border-box;
+    border-radius: 0px;
+    background-color: transparent;
+}
 
 .invalid-feedback {
-    color:#d61e1e
+    color:#d61e1e;
 }
 
 .texto-branco {
@@ -79,7 +98,8 @@ button:hover {
 .topo {
     width: 100%;
     background-color: #f8f8f8;
-    position: absolute;
+    position: fixed;
+    top: 0;
     padding: 20px 0px 10px 0px;
 }
 

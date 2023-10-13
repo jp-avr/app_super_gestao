@@ -26,8 +26,7 @@
             <div class="contato">
                 <h1>Contato</h1>
                 <p>Caso tenha qualquer dúvida por favor entre em contato pelo formulário abaixo.<p>
-                    @component('components.formcontato.formcontato',['classe' => 'borda-branca'])
-                    @endcomponent
+                    @include('components.formcontato.formcontato',['classe' => 'borda-branca'])
             </div>
         </div>
     </div>

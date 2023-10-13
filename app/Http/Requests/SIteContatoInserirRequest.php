@@ -27,7 +27,7 @@ class SiteContatoInserirRequest extends FormRequest
             'site_contato_nome' => ['required', 'string', 'max:255'],
             'site_contato_email' => ['required', 'email', 'max:255' ],
             'site_contato_telefone' => ['required', 'string', 'max:255'],
-            'site_contato_motivo_contato' => ['required', 'integer'],
+            'motivo_contato_id' => ['required', 'integer'],
             'site_contato_mensagem' => ['required', 'string'],
         ];
     }
@@ -44,8 +44,8 @@ class SiteContatoInserirRequest extends FormRequest
             'site_contato_telefone.string' => 'O campo Telefone é inválido',
             'site_contato_telefone.required' => 'O campo Telefone é obrigatório',
 
-            'site_contato_motivo_contato.required' => 'O campo Motivo de Contato é obrigatório',
-            'site_contato_motivo_contato.integer' => 'O campo Motivo de Contato é inválido',
+            'motivo_contato_id.required' => 'O campo Motivo de Contato é obrigatório',
+            'motivo_contato_id.integer' => 'O campo Motivo de Contato é inválido',
 
             'site_contato_mensagem.required' => 'O campo Mensagem é obrigatório',
             'site_contato_mensagem.string' => 'O campo Mensagem é inválido',
