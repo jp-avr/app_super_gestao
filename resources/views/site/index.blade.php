@@ -9,11 +9,11 @@
                 <p>Software para gestão empresarial ideal para sua empresa.<p>
                 <div class="chamada">
                     <img src="/img/check.png">
-                    <span class="texto-branco">Gestão completa e descomplicada</span>
+                    <span class="texto-branco"><strong>Gestão completa e descomplicada</strong></span>
                 </div>
                 <div class="chamada">
                     <img src="img/check.png">
-                    <span class="texto-branco">Sua empresa na nuvem</span>
+                    <span class="texto-branco"><strong>Sua empresa na nuvem</strong></span>
                 </div>
             </div>
 

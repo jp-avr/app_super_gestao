@@ -5,16 +5,16 @@ html, body {
 }
 
 p, span {
-    color: #ffffff;
+    color: #1c1e21;
 }
 
 h1 {
-    color: #ffffff;
+    color: #1c1e21;
     font-size: 28px;
 }
 
 h2 {
-    color: #333333;
+    color: #1c1e21;
     font-size: 22px;
 }
 
@@ -61,11 +61,18 @@ input {
 }
 
 .texto-branco {
-    color: #ffffff;
+    color: #000000;
 }
 
 .borda-branca {
-    border: solid 1px #fff;
+    border: solid 1px #000000;
+}
+
+.title{
+    font-size: 20px;
+    text-decoration: none;
+    padding: 14px 16px;
+    color: #1c1e21;
 }
 
 .borda-preta {
@@ -97,14 +104,14 @@ button:hover {
 
 .topo {
     width: 100%;
-    background-color: #f8f8f8;
+    background-color: #1877f2;
     position: fixed;
     top: 0;
     padding: 20px 0px 10px 0px;
 }
 
 .logo {
-    width: 50px;
+    width: 00px;
     float: left;
     margin-left: 40px;
 }
@@ -129,7 +136,7 @@ button:hover {
 .menu a {
     text-decoration: none;
     padding: 14px 16px;
-    color: #333;
+    color: #1c1e21;
 }
 
 .menu a:hover {
@@ -144,20 +151,20 @@ button:hover {
 
 .esquerda {
     float:left;
-    background-color: #268fd0;
+    background-color: #f0f2f5;
     width: 60%;
     height: 100%;
 }
 
 .direita {
     float:right;
-    background-color: #2a9ee2;
+    background-color: #f0f2f5;
     width: 40%;
     height: 100%;
 }
 
 .informacoes, .contato {
-    margin: 100px 40px 40px 40px;
+    margin: 100px 30px 40px 40px;
 }
 
 .contato-principal {
@@ -166,7 +173,7 @@ button:hover {
 
 .chamada {
     margin-top: 30px;
-    margin-left: 20px;
+    margin-left:0px;
 }
 
 .video {
@@ -206,17 +213,18 @@ button:hover {
 
 .redes-sociais, .area-contato, .localizacao {
     width: 33.333%;
-    border-top:solid 1px #ccc;
+    border-top:solid 0px #ccc;
     float: left;
     text-align: center;
     background-color: #f8f8f8;
-    height: 250px;
+    height: 150px;
 }
 
 .redes-sociais, .area-contato, .localizacao p, span {
+    /* margin: 0px 10px; */
     color: #333333;
 }
 
 .redes-sociais img {
-    margin: 0px 15px 0px 15px;
+    margin: 0px 0px 0px 15px;
 }

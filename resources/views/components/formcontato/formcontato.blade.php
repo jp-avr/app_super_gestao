@@ -1,7 +1,7 @@
 <form method="post" action=" {{ route('contatos.store') }}">
     @csrf
     <div>
-        <input type="text" placeholder="Nome *" name="site_contato_nome" value="{{ old('site_contato_nome')}}" class="{{ $classe }} form-control @error('name') is-invalid @enderror">
+        <input type="text" placeholder="Nome *" name="site_contato_nome" value="{{ old('site_contato_nome')}}" class="{{ $classe }} form-control @error('site_contato_nome') is-invalid @enderror">
         @error('site_contato_nome')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -29,7 +29,7 @@
 
     <div class="teste">
         <select class="form-control @error('motivo_contato_id') is-invalid @enderror" name="motivo_contato_id" class="{{ $classe }}">            
-            <option value="" selected disabled>Qual o motivo do contato? *</option>
+            <option value="" selected disabled>Selecione o motivo do contato? *</option>
             @foreach ($motivos as $motivo)
             <option value="{{ $motivo->motivo_contato_id}}" @if ($motivo) {{ '' }} @endif>
                 {{ $motivo->motivo_contato_descricao }}
@@ -53,6 +53,6 @@
     </div>
 
     <div>
-        <button type="submit" class="{{ $classe }}">ENVIAR</button>
+        <button type="submit" class="btn-primary btn-sm">ENVIAR</button>
     </div>
 </form>
