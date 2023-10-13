@@ -20,10 +20,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/sobre-nos', 'SobreNosController@index')->name('sobrenos');
 
-Route::prefix('/contatos')->group(function(){
-    Route::get('index', 'ContatosController@index')->name('contatos.index');
-    Route::get('store', 'ContatosController@store')->name('contatos.store');
-    Route::post('store', 'ContatosController@store')->name('contatos.store');
+
+
+
+//APLICANDO MIDDLEWARE
+Route::group(['middleware' => ['log_acesso']], function() {
+    Route::prefix('/contatos')->group(function(){
+        Route::get('index', 'ContatosController@index')->name('contatos.index');
+        Route::get('store', 'ContatosController@store')->name('contatos.store');
+        Route::post('store', 'ContatosController@store')->name('contatos.store');
+    });
 });
 
 
