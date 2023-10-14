@@ -45,6 +45,8 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post('/listar', 'FornecedoresController@listar')->name('app.fornecedor.listar');
             Route::get('/adicionar', 'FornecedoresController@adicionar')->name('app.fornecedor.adicionar');
             Route::post('/cadastro', 'FornecedoresController@store')->name('app.fornecedor.cadastro');
+            Route::get('/update/index/{fornecedor_id}', 'FornecedoresController@update_view')->name('app.fornecedor.update.index');
+            Route::get('/update/{fornecedor_id}', 'FornecedoresController@update')->name('app.fornecedor.update');
         }); 
 
         Route::get('/produto', 'ProdutoController@index')->name('app.produto');    

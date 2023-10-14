@@ -11,23 +11,47 @@ class FornecedoresController extends Controller
 {
     public function index(Request $request)
     {   
-        $fornecedores = null;
-        if($request->fornecedor_nome){
-            $fornecedores = Fornecedor::where('fornecedor_nome','=',$request->fornecedor_nome)->get();
-        }
-
-        return view('app.fornecedores.index',compact('fornecedores'));
+        return view('app.fornecedores.index');
     }
 
-    public function listar()
+    public function listar(Request $request)
     {   
-        $fornecedores = Fornecedor::all();
+        $fornecedores = Fornecedor::where('fornecedor_nome', 'like', '%'.$request->input('fornecedor_nome').'%')
+        ->where('fornecedor_uf','like','%'.$request->input('fornecedor_uf').'%')
+        ->where('fornecedor_site','like','%'.$request->input('fornecedor_site').'%')
+        ->where('fornecedor_email','like','%'.$request->input('fornecedor_email').'%')
+        ->get();
+
+        
+        
         return view('app.fornecedores.listar', compact('fornecedores'));
     }
 
     public function adicionar()
     {
         return view('app.fornecedores.adicionar');
+    }
+
+    public function update_view($fornecedor_id)
+    {
+        $fornecedor = Fornecedor::findOrFail($fornecedor_id);
+
+        return view('app.fornecedores.update', compact('fornecedor'));
+    }
+
+    public function update(Request $request, $fornecedor_id)
+    {   
+        $fornecedor = Fornecedor::findOrFail($fornecedor_id);
+        
+        // if(Fornecedor::where('fornecedor_nome'))
+        $fornecedor->update([
+            'fornecedor_nome' => $request->get('fornecedor_nome'),
+            'fornecedor_uf' => $request->get('fornecedor_uf'),
+            'fornecedor_email' => $request->get('fornecedor_email'),
+            'fornecedor_site' => $request->get('fornecedor_site'),
+        ]);
+        
+        return redirect()->route('app.fornecedor');
     }
 
     public function store(FornecedorInserirRequest $request)

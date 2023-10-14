@@ -16,27 +16,34 @@
     </div>
 
     <div class="informacao-pagina">
-        <div style="width: 30%; margin-left: auto; margin-right: auto;">
-            @foreach($fornecedores as $fornecedor)
+        <div style="width: 90%; margin-left: auto; margin-right: auto;">
+            <table border="3" width="100%">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Site</th>
+                        <th>UF</th>
+                        <th>Email</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
 
-            <ul>
-                <li>
-                    {{ $fornecedor->fornecedor_nome }}
-                </li>
-                <li>
-                    {{ $fornecedor->fornecedor_uf }}
-                </li>
-                <li>
-                    {{ $fornecedor->fornecedor_email }}
-                </li>
-                <li>
-                    {{ $fornecedor->fornecedor_site }}
-                </li>
-                
-            </ul>
-            
+                <tbody>
+                    @foreach($fornecedores as $fornecedor)
+                        <tr>
+                            <th>{{ $fornecedor->fornecedor_nome}}</th>
+                            <th>{{ $fornecedor->fornecedor_site}}</th>
+                            <th>{{ $fornecedor->fornecedor_uf}}</th>
+                            <th>{{ $fornecedor->fornecedor_email}}</th>
+                            <th><a href="#">Excluir</a></th>
+                            <th><a href="{{ route('app.fornecedor.update.index', $fornecedor->fornecedor_id) }}">Editar</a></th>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>           
 
-            @endforeach
+
         </div>
     </div>
 </div>
