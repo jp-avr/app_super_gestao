@@ -82,10 +82,6 @@ class AuthController extends Controller
             'password' => Hash::make($request['password']),
         ]);
 
-        $email = $request->get('email');
-        $password = $request->get('password');
-
-        echo "Usuario: $email | Senha: $password";
 
         return redirect()->route('login')->with('sucesso','Conta criada com sucesso!');
     }

@@ -39,7 +39,14 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/home', 'HomeController@index_logado')->name('app.home');
         Route::get('/sair', 'AuthController@logout')->name('app.sair');
         Route::get('/cliente', 'ClienteController@index')->name('app.cliente');
-        Route::get('/fornecedor', 'FornecedoresController@index')->name('app.fornecedor');
+
+        Route::prefix('/fornecedor')->group(function() {
+            Route::get('/index', 'FornecedoresController@index')->name('app.fornecedor');
+            Route::post('/listar', 'FornecedoresController@listar')->name('app.fornecedor.listar');
+            Route::get('/adicionar', 'FornecedoresController@adicionar')->name('app.fornecedor.adicionar');
+            Route::post('/cadastro', 'FornecedoresController@store')->name('app.fornecedor.cadastro');
+        }); 
+
         Route::get('/produto', 'ProdutoController@index')->name('app.produto');    
     });
 });

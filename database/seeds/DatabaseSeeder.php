@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AnoSeeder::class);
         $this->call(MesSeeder::class);
         $this->call(DiaSeeder::class);
+        $this->call(UserSeeder::class);
     }
 }

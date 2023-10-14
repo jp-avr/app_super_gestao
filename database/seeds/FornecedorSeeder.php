@@ -15,8 +15,15 @@ class FornecedorSeeder extends Seeder
         Fornecedor::create([
             'fornecedor_nome' => 'Google',
             'fornecedor_uf' => 'MA',
-            'fornecedor_email' => 'for@dev.com',
-            'fornecedor_site' => 'www.fornecedor.com',
+            'fornecedor_email' => 'google@dev.com',
+            'fornecedor_site' => 'www.google.com',
+        ]);
+
+        Fornecedor::create([
+            'fornecedor_nome' => 'Amazon',
+            'fornecedor_uf' => 'MA',
+            'fornecedor_email' => 'amazon@dev.com',
+            'fornecedor_site' => 'www.amazon.com',
         ]);
     }
 }
