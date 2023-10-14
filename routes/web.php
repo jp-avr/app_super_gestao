@@ -25,6 +25,7 @@ Route::post('/registro', 'AuthController@autenticar')->name('registro');
 Route::get('/login', 'LoginController@index')->name('login');
 Route::post('/login', 'AuthController@login')->name('post_login');
 
+
 Route::prefix('/contatos')->group(function(){
     Route::get('index', 'ContatosController@index')->name('contatos.index');
     Route::get('store', 'ContatosController@store')->name('contatos.store');
@@ -35,11 +36,11 @@ Route::prefix('/contatos')->group(function(){
 // APLICANDO MIDDLEWARE
 Route::group(['middleware' => ['auth']], function() {
     Route::prefix('/app')->group(function(){
-        Route::get('/home, HomeController@index')->name('app.home');
-        Route::get('/sair, AuthController@logout')->name('app.sair');
+        Route::get('/home', 'HomeController@index_logado')->name('app.home');
+        Route::get('/sair', 'AuthController@logout')->name('app.sair');
         Route::get('/cliente', 'ClienteController@index')->name('app.cliente');
         Route::get('/fornecedor', 'FornecedoresController@index')->name('app.fornecedor');
-        Route::get('/produto', 'Produtos')->name('app.produto');    
+        Route::get('/produto', 'ProdutoController@index')->name('app.produto');    
     });
 });
 

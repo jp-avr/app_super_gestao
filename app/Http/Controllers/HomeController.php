@@ -13,4 +13,9 @@ class HomeController extends Controller
         return view('site.index', compact('motivos'));
     }
 
+    public function index_logado()
+    {
+        return view('app.home');
+    }
+
 }
