@@ -48,6 +48,7 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post('/cadastro', 'FornecedoresController@store')->name('app.fornecedor.cadastro');
             Route::get('/update/index/{fornecedor_id}', 'FornecedoresController@update_view')->name('app.fornecedor.update.index');
             Route::get('/update/{fornecedor_id}', 'FornecedoresController@update')->name('app.fornecedor.update');
+            Route::get('/destroy/{fornecedor_id}','FornecedoresController@destroy')->name('app.fornecedor.destroy');
         }); 
 
         Route::get('/produto', 'ProdutoController@index')->name('app.produto');    

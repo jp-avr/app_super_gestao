@@ -30,16 +30,21 @@
                 </thead>
 
                 <tbody>
-                    @foreach($fornecedores as $fornecedor)
+                    @forelse($fornecedores as $fornecedor)
                         <tr>
                             <th>{{ $fornecedor->fornecedor_nome}}</th>
                             <th>{{ $fornecedor->fornecedor_site}}</th>
                             <th>{{ $fornecedor->fornecedor_uf}}</th>
                             <th>{{ $fornecedor->fornecedor_email}}</th>
-                            <th><a href="#">Excluir</a></th>
+                            <th><a href="{{ route('app.fornecedor.destroy', $fornecedor->fornecedor_id) }}">Excluir</a></th>
                             <th><a href="{{ route('app.fornecedor.update.index', $fornecedor->fornecedor_id) }}">Editar</a></th>
                         </tr>
-                    @endforeach
+
+                        @empty
+                        <tr>
+                            <td style="border: none;">Nenhum fornecedor encontrado</td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>           
 

@@ -54,6 +54,13 @@ class FornecedoresController extends Controller
         return redirect()->route('app.fornecedor');
     }
 
+    public function destroy($fornecedor_id)
+    {
+        
+        $fornecedor_id = Fornecedor::where('fornecedor_id', '=', $fornecedor_id)->delete();
+        return redirect()->route('app.fornecedor');
+    }
+
     public function store(FornecedorInserirRequest $request)
     {
         Fornecedor::create([
