@@ -14,7 +14,7 @@ class SiteContato extends Model
      */
     protected $fillable = [
         'site_contato_nome',
-        'motivo_contato_id',
+        'motivo_contato',
         'site_contato_mensagem',
         'site_contato_telefone',
         'site_contato_email',

@@ -20,8 +20,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/sobre-nos', 'SobreNosController@index')->name('sobrenos');
 
-Route::get('/registro', 'LoginController@index')->name('registro');
-Route::post('/registro', 'LoginController@autenticar')->name('registro');
+Route::get('/registro', 'AuthController@index')->name('registro');
+Route::post('/registro', 'AuthController@autenticar')->name('registro');
+Route::get('/login', 'LoginController@index')->name('login');
+Route::post('/login', 'AuthController@login')->name('post_login');
 
 Route::prefix('/contatos')->group(function(){
     Route::get('index', 'ContatosController@index')->name('contatos.index');
@@ -31,10 +33,10 @@ Route::prefix('/contatos')->group(function(){
 
 
 // APLICANDO MIDDLEWARE
-Route::group(['middleware' => ['log_acesso']], function() {
+Route::group(['middleware' => ['auth']], function() {
     Route::prefix('/app')->group(function(){
         Route::get('/clientes', function(){return 'Clientes';})->name('app.clientes');
-        Route::get('/fornecedores', 'FornecedoresController@index')->name('app.fornecedores');
+        Route::get('index', 'FornecedoresController@index')->name('app.fornecedores');
         Route::get('/produtos', function(){return 'Produtos';})->name('app.produtos');    
     });
 });
