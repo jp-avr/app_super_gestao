@@ -6,13 +6,13 @@
                 <p>{{session('sucesso')}}</p>
             </div>
          @endif
-
+            <div>
+                <a href="{{ route('home') }}">
+                    <i class="align-middle me-1" data-feather="arrow-left"></i>
+                    Voltar para página inicial
+                </a>
+            </div>
         <div class="container-fluid p-0 col-8">
-
-            <a href="{{ route('home') }}">
-                <i class="align-middle me-1" data-feather="arrow-left"></i>
-                Voltar para página inicial
-            </a>
             <div class="d-flex justify-content-center">
             <div class="my-3 text-center">
                 <h2><b>Login</b></h2>

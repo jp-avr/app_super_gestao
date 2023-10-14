@@ -47,8 +47,13 @@ class AuthController extends Controller
             throw ValidationException::withMessages($user);
         } else{
             Auth::login($user);
-            return redirect()->route('app.fornecedores');
+            return redirect()->route('app.fornecedor');
         }
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+        return redirect()->route('home');
     }
 
     // public function show_login(){

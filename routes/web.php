@@ -35,9 +35,11 @@ Route::prefix('/contatos')->group(function(){
 // APLICANDO MIDDLEWARE
 Route::group(['middleware' => ['auth']], function() {
     Route::prefix('/app')->group(function(){
-        Route::get('/clientes', function(){return 'Clientes';})->name('app.clientes');
-        Route::get('index', 'FornecedoresController@index')->name('app.fornecedores');
-        Route::get('/produtos', function(){return 'Produtos';})->name('app.produtos');    
+        Route::get('/home, HomeController@index')->name('app.home');
+        Route::get('/sair, AuthController@logout')->name('app.sair');
+        Route::get('/cliente', 'ClienteController@index')->name('app.cliente');
+        Route::get('/fornecedor', 'FornecedoresController@index')->name('app.fornecedor');
+        Route::get('/produto', 'Produtos')->name('app.produto');    
     });
 });
 
