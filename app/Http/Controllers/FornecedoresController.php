@@ -20,11 +20,11 @@ class FornecedoresController extends Controller
         ->where('fornecedor_uf','like','%'.$request->input('fornecedor_uf').'%')
         ->where('fornecedor_site','like','%'.$request->input('fornecedor_site').'%')
         ->where('fornecedor_email','like','%'.$request->input('fornecedor_email').'%')
-        ->get();
+        ->paginate(2);
 
         
         
-        return view('app.fornecedores.listar', compact('fornecedores'));
+        return view('app.fornecedores.listar', compact('fornecedores','request'));
     }
 
     public function adicionar()

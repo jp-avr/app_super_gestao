@@ -43,6 +43,7 @@ Route::group(['middleware' => ['auth']], function() {
         Route::prefix('/fornecedor')->group(function() {
             Route::get('/index', 'FornecedoresController@index')->name('app.fornecedor');
             Route::post('/listar', 'FornecedoresController@listar')->name('app.fornecedor.listar');
+            Route::get('/listar', 'FornecedoresController@listar')->name('app.fornecedor.listar');
             Route::get('/adicionar', 'FornecedoresController@adicionar')->name('app.fornecedor.adicionar');
             Route::post('/cadastro', 'FornecedoresController@store')->name('app.fornecedor.cadastro');
             Route::get('/update/index/{fornecedor_id}', 'FornecedoresController@update_view')->name('app.fornecedor.update.index');

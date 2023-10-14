@@ -18,7 +18,7 @@
     <div class="informacao-pagina">
         <div style="width: 30%; margin-left: auto; margin-right: auto;">
             <form method="post" action=" {{ route('app.fornecedor.cadastro') }}">
-                <input type="hidden" name="fornecedor_id" value="{{ $fornecedor->fornecedor_id }}">
+                <input type="hidden" name="fornecedor_id" value="{{ $fornecedor->fornecedor_id ?? old('fornecedor_id') }}">
                 @csrf
                 <div>
                     <input type="text" name="fornecedor_nome" placeholder="Nome" class="borda-preta @error('fornecedor_nome') is-invalid @enderror" value="{{ $fornecedor->fornecedor_nome ?? old('fornecedor_nome') }}">

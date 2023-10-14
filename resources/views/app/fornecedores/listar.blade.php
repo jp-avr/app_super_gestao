@@ -16,7 +16,7 @@
     </div>
 
     <div class="informacao-pagina">
-        <div style="width: 90%; margin-left: auto; margin-right: auto;">
+        <div style="width: 50%; margin-left: auto; margin-right: auto;">
             <table border="3" width="100%">
                 <thead>
                     <tr>
@@ -43,7 +43,11 @@
                 </tbody>
             </table>           
 
-
+            <div class="paginate">
+                <nav class="d-flex justify-content-end">
+                    {{ $fornecedores->appends($request->all())->links() }}
+                </nav>
+            </div>
         </div>
     </div>
 </div>
