@@ -76,7 +76,8 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        //
+        $unidades = Unidade::all();
+        return view('app.produtos.edit',compact('produto','unidades'));
     }
 
     /**
@@ -88,7 +89,14 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, Produto $produto)
     {
-        //
+        $produto->update([
+            'produto_nome' => $request->get('produto_nome'),
+            'produto_descricao' => $request->get('produto_descricao'),
+            'produto_peso' => $request->get('produto_peso'),
+            'unidade_id' => $request->get('unidade_id'),
+        ]);
+
+        return redirect()->route('produto.index');
     }
 
     /**

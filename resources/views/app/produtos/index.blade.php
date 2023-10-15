@@ -38,7 +38,7 @@
                             <th>{{ $produto->unidade_id}}</th>
                             <th><a href="{{ route('produto.show', $produto->produto_id) }}">Visualizar</a></th>
                             <th><a href="{{ route('produto.destroy', $produto->produto_id) }}">Excluir</a></th>
-                            <th><a href="{{ route('produto.index', $produto->produto_id) }}">Editar</a></th>
+                            <th><a href="{{ route('produto.edit', $produto->produto_id) }}">Editar</a></th>
                         </tr>
 
                         @empty
