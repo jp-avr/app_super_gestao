@@ -51,7 +51,7 @@ Route::group(['middleware' => ['auth']], function() {
             Route::get('/destroy/{fornecedor_id}','FornecedoresController@destroy')->name('app.fornecedor.destroy');
         }); 
 
-        Route::get('/produto', 'ProdutoController@index')->name('app.produto');    
+        Route::resource('produto','ProdutoController');   
     });
 });
 

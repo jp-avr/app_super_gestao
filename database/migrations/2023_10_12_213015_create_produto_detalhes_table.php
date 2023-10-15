@@ -14,7 +14,7 @@ class CreateProdutoDetalhesTable extends Migration
     public function up()
     {
         Schema::create('produto_detalhes', function (Blueprint $table) {
-            $table->id('produto_detalhes_id', 8, 2);
+            $table->id('produto_detalhe_id', 8, 2);
             $table->foreignId('produto_id')->references('produto_id')->on('produtos');
             $table->foreignId('unidade_id')->references('unidade_id')->on('unidades');
             $table->float('produto_comprimento', 8, 2);

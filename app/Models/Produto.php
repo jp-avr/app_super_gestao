@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Produtos extends Model
+class Produto extends Model
 {
     protected $table = 'produtos';
     /**
@@ -16,9 +16,7 @@ class Produtos extends Model
         'produto_nome',
         'produto_descricao',
         'produto_peso',
-        'produto_preco_venda',
-        'produto_estoque_minimo',
-        'produto_estoque_maximo',
+        'unidade_id',
     ];
 
     protected $primaryKey = 'produto_id';
