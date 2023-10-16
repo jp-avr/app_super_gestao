@@ -16,16 +16,17 @@
     </div>
 
     <div class="informacao-pagina">
-        <div style="width: 50%; margin-left: auto; margin-right: auto;">
+        <div style="width: 60%; margin-left: auto; margin-right: auto;">
             <table border="3" width="100%">
                 <thead>
                     <tr>
                         <th>Nome</th>
                         <th>Descrição</th>
                         <th>Peso</th>
-                        <th>Unidade</th>
-                        <th></th>
-                        <th></th>
+                        <th>Unidade ID</th>
+                        <th>Comprimento</th>
+                        <th>Altura</th>
+                        <th>Largura</th>
                     </tr>
                 </thead>
 
@@ -36,6 +37,9 @@
                             <th>{{ $produto->produto_descricao}}</th>
                             <th>{{ $produto->produto_peso}}</th>
                             <th>{{ $produto->unidade_id}}</th>
+                            <th>{{ $produto->produtoDetalhe->produto_comprimento ?? ''}}</th>
+                            <th>{{ $produto->produtoDetalhe->produto_largura ?? ''}}</th>
+                            <th>{{ $produto->produtoDetalhe->produto_altura ?? ''}}</th>
                             <th><a href=" {{ route('produto.show', $produto->produto_id) }} ">Visualizar</a></th>
 
                             <th>

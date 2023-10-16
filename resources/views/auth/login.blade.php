@@ -42,7 +42,7 @@
 
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input id="password_usuario" type="password_usuario" placeholder="Senha" class="form-control @error('password_usuario') is-invalid @enderror" name="password_usuario" autocomplete="new-password">
+                                        <input id="password_usuario" type="password" placeholder="Senha" class="form-control @error('password_usuario') is-invalid @enderror" name="password_usuario" autocomplete="new-password">
                                         @error('password_usuario')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>

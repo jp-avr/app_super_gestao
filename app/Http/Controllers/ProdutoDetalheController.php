@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProdutoDetalheInserirRequest;
+use App\Models\Produto;
+use App\Models\ProdutoDetalhe;
+use App\Models\Unidade;
 use Illuminate\Http\Request;
 
 class ProdutoDetalheController extends Controller
@@ -23,7 +27,8 @@ class ProdutoDetalheController extends Controller
      */
     public function create()
     {
-        //
+        $unidades = Unidade::all();
+        return view('app.produtodetalhes.create', compact('unidades'));
     }
 
     /**
@@ -32,9 +37,17 @@ class ProdutoDetalheController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProdutoDetalheInserirRequest $request)
     {
-        //
+        ProdutoDetalhe::create([
+            'produto_id' => $request->produto_id,
+            'unidade_id' => $request->unidade_id,
+            'produto_comprimento' => $request->produto_comprimento,
+            'produto_largura' => $request->produto_largura,
+            'produto_altura' => $request->produto_altura
+        ]);
+
+        return redirect()->route('produto_detalhe.create');
     }
 
     /**
@@ -54,9 +67,10 @@ class ProdutoDetalheController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ProdutoDetalhe $produto_detalhe)
     {
-        //
+        $unidades = Unidade::all();
+        return view('app.produtodetalhes.edit',compact('unidades','produto_detalhe'));
     }
 
     /**
@@ -66,9 +80,17 @@ class ProdutoDetalheController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProdutoDetalheInserirRequest $request, ProdutoDetalhe $produto_detalhe)
     {
-        //
+        $produto_detalhe->update([
+            'produto_id' => $request->get('produto_id'),
+            'unidade_id' => $request->get('unidade_id'),
+            'produto_comprimento' => $request->get('produto_comprimento'),
+            'produto_largura' => $request->get('produto_largura'),
+            'produto_altura' => $request->get('produto_altura'),
+        ]);
+
+        return redirect()->route('produto_detalhe.create');
     }
 
     /**

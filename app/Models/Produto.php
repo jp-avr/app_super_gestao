@@ -20,4 +20,8 @@ class Produto extends Model
     ];
 
     protected $primaryKey = 'produto_id';
+
+    public function produtoDetalhe(){
+        return $this->hasOne('App\Models\ProdutoDetalhe');
+    }
 }

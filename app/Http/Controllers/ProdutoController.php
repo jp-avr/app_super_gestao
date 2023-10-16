@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProdutoInserirRequest;
 use App\Models\Produto;
+use App\Models\ProdutoDetalhe;
 use App\Models\Unidade;
 use Illuminate\Http\Request;
 
@@ -16,9 +17,10 @@ class ProdutoController extends Controller
      */
     public function index(Request $request)
     {   
-        $produtos = Produto::paginate(10);
-        $unidades = Unidade::all();
-        return view('app.produtos.index',compact('produtos','request','unidades'));
+        $produtos = Produto::paginate(5);
+        // $unidades = Unidade::all();
+
+        return view('app.produtos.index',compact('produtos','request'));
     }
 
     /**
