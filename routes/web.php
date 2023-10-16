@@ -52,6 +52,7 @@ Route::group(['middleware' => ['auth']], function() {
         }); 
 
         Route::resource('produto','ProdutoController');   
+        Route::resource('produto_detalhes','ProdutoDetalheController');
     });
 });
 
