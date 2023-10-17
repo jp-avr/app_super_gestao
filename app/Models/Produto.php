@@ -22,6 +22,6 @@ class Produto extends Model
     protected $primaryKey = 'produto_id';
 
     public function produtoDetalhe(){
-        return $this->hasOne('App\Models\ProdutoDetalhe');
+        return $this->hasOne(ProdutoDetalhe::class, 'produto_id','produto_id');
     }
 }

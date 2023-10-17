@@ -22,4 +22,9 @@ class ProdutoDetalhe extends Model
 
     protected $primaryKey = 'produto_detalhe_id';
 
+    // public function produtoDetalhe()
+    // {
+    //     return $this->belongsTo(Produto::class,'produto_id','produto_id');
+    // }
+
 }
