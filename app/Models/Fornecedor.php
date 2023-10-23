@@ -20,4 +20,9 @@ class Fornecedor extends Model
     ];
 
     protected $primaryKey = 'fornecedor_id';
+
+    public function produtos()
+    {
+        return $this->hasMany(Produto::class, 'produto_id', 'produto_id');
+    }
 }

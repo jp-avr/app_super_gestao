@@ -24,6 +24,7 @@ class ProdutoInserirRequest extends FormRequest
     public function rules()
     {
         return [
+            'fornecedor_id' => ['required','integer'],
             'produto_nome' => ['required', 'string', 'max:255'],
             'produto_descricao' => ['required', 'string', 'max:255' ],
             'produto_peso' => ['required', 'integer'],
@@ -34,6 +35,8 @@ class ProdutoInserirRequest extends FormRequest
     public function messages()
     {
         return [
+            'fornecedor_id.required' => 'O campo Fornecedor é obrigatório',
+
             'produto_nome.string' => 'O campo Nome é inválido',
             'produto_nome.required' => 'O campo Nome é obrigatório',
 

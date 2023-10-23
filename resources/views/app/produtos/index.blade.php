@@ -21,6 +21,7 @@
                 <thead>
                     <tr>
                         <th>Nome</th>
+                        <th>Fornecedor</th>
                         <th>Descrição</th>
                         <th>Peso</th>
                         <th>Unidade ID</th>
@@ -34,6 +35,7 @@
                     @forelse($produtos as $produto)
                         <tr>
                             <th>{{ $produto->produto_nome}}</th>
+                            <th>{{ $produto->fornecedor->fornecedor_nome}}</th>
                             <th>{{ $produto->produto_descricao}}</th>
                             <th>{{ $produto->produto_peso}}</th>
                             <th>{{ $produto->unidade_id}}</th>

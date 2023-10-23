@@ -20,6 +20,23 @@
             <form method="post" action=" {{ route('produto.store') }}">
                 <input type="hidden" name="produto_id" value="{{ $produto->produto_id ?? old('produto_id') }}">
                 @csrf
+
+                <div>
+                    <select class="borda-preta @error('fornecedor_id') is-invalid @enderror" name="fornecedor_id" placeholder="Fornecedor">
+                        <option value="" selected disabled>Selecione o Fornecedor</option>
+                        @foreach($fornecedores as $fornecedor)
+                        <option value="{{ $fornecedor->fornecedor_id}}" {{ old('fornecedor_id') == $fornecedor->fornecedor_id ? 'selected' : ''}}>
+                            {{ $fornecedor->fornecedor_nome }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @error('fornecedor_id')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
                 <div>
                     <input type="text" name="produto_nome" placeholder="Nome do produto" class="borda-preta @error('produto_nome') is-invalid @enderror" value="{{ $produto->produto_nome ?? old('produto_nome') }}">
                     @error('produto_nome')

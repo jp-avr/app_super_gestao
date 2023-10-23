@@ -13,6 +13,7 @@ class Produto extends Model
      * @var array
      */
     protected $fillable = [
+        'fornecedor_id',
         'produto_nome',
         'produto_descricao',
         'produto_peso',
@@ -23,5 +24,10 @@ class Produto extends Model
 
     public function produtoDetalhe(){
         return $this->hasOne(ProdutoDetalhe::class, 'produto_id','produto_id');
+    }
+
+    public function fornecedor()
+    {
+        return $this->belongsTo(Fornecedor::class,'fornecedor_id','fornecedor_id');
     }
 }

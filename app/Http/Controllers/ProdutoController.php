@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProdutoInserirRequest;
+use App\Models\Fornecedor;
 use App\Models\Produto;
 use App\Models\ProdutoDetalhe;
 use App\Models\Unidade;
@@ -30,9 +31,10 @@ class ProdutoController extends Controller
      */
     public function create()
     {
+        $fornecedores = Fornecedor::all();
         $produtos = Produto::all();
         $unidades = Unidade::all();
-        return view('app.produtos.create',compact('produtos','unidades'));
+        return view('app.produtos.create',compact('produtos','unidades','fornecedores'));
     }
 
     /**
@@ -43,13 +45,10 @@ class ProdutoController extends Controller
      */
     public function store(ProdutoInserirRequest $request)
     {
-        // $unidade_id = Unidade::create([
-        //     'unidade' => $request->unidade,
-        //     'unidade_descricao' => $request->unidade,
-        // ]);
 
         Produto::create([
             'produto_nome' => $request->produto_nome,
+            'fornecedor_id' => $request->fornecedor_id,
             'produto_descricao' => $request->produto_descricao,
             'produto_peso' => $request->produto_peso,
             'unidade_id' => $request->unidade_id,
@@ -109,7 +108,6 @@ class ProdutoController extends Controller
      */
     public function destroy(Produto $produto)
     {
-        // dd($produto);
         $produto = Produto::where('produto_id', '=', $produto->produto_id)->delete();
         return redirect()->route('produto.index');
     }
