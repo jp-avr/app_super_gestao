@@ -21,6 +21,23 @@
                 <input type="hidden" name="produto_id" value="{{ $produto->produto_id ?? old('produto_id') }}">
                 @csrf
                 @method('PUT')
+                
+                <div>
+                    <select class="borda-preta @error('fornecedor_id') is-invalid @enderror" name="fornecedor_id">
+                        {{-- <option value="" selected>Selecione o Fornecedor</option> --}}
+                        @foreach($fornecedores as $fornecedor)
+                        <option value="{{ $fornecedor->fornecedor_id}}" {{ ($produto->fornecedor_id ?? old('fornecedor_id')) == $fornecedor->fornecedor_id ? 'selected' : ''}}>
+                            {{ $fornecedor->fornecedor_nome }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @error('fornecedor_id')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
                 <div>
                     <input type="text" name="produto_nome" placeholder="Nome do produto" class="borda-preta @error('produto_nome') is-invalid @enderror" value="{{ $produto->produto_nome ?? old('produto_nome') }}">
                     @error('produto_nome')

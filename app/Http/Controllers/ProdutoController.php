@@ -77,8 +77,9 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
+        $fornecedores = Fornecedor::all();
         $unidades = Unidade::all();
-        return view('app.produtos.edit',compact('produto','unidades'));
+        return view('app.produtos.edit',compact('produto','unidades','fornecedores'));
     }
 
     /**
@@ -91,6 +92,7 @@ class ProdutoController extends Controller
     public function update(Request $request, Produto $produto)
     {
         $produto->update([
+            'fornecedor_id' => $request->get('fornecedor_id'),
             'produto_nome' => $request->get('produto_nome'),
             'produto_descricao' => $request->get('produto_descricao'),
             'produto_peso' => $request->get('produto_peso'),
