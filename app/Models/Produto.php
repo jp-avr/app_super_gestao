@@ -30,4 +30,9 @@ class Produto extends Model
     {
         return $this->belongsTo(Fornecedor::class,'fornecedor_id','fornecedor_id');
     }
+
+    public function pedidos()
+    {
+        $this->belongsToMany(Pedido::class,'pedido_produtos', 'produto_id','pedido_id');
+    }
 }
