@@ -25,6 +25,6 @@ class Pedido extends Model
 
     public function produtos()
     {
-        $this->belongsToMany(Produto::class,'pedido_produtos', 'pedido_id','produto_id');
+        return $this->belongsToMany(Produto::class,'pedido_produtos', 'pedido_id','produto_id');
     }
 }

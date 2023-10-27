@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ClienteInserirRequest;
 use App\Models\Cliente;
 use App\Models\Produto;
 use Illuminate\Http\Request;
@@ -35,7 +36,7 @@ class ClienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ClienteInserirRequest $request)
     {
         Cliente::create([
             'cliente_nome' => $request->cliente_nome

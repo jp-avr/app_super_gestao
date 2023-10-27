@@ -22,11 +22,12 @@ class PedidoProduto extends Pivot
 
     public function produtos()
     {
-        $this->belongsTo(Produto::class);
+        return $this->belongsTo(Produto::class);
     }
 
     public function pedidos()
     {
-        $this->belongsTo(Pedido::class);
+        return $this->belongsTo(Pedido::class);
     }
+    
 }
